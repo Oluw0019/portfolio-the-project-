@@ -1,0 +1,293 @@
+/* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px; /* creates space above header */
+}
+
+/* Header stays on top but not too tall */
+header {
+  background-color: #e38fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 20px 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+  position: relative; /* not fixed, just sits freely */
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Horizontal nav */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+  color: #7b008f; /* Darker purple on hover */
+}
+
+
+/* Landscape layout for main content */
+main.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 90%;
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+/* Make sections look like horizontal cards */
+.card {
+  background-color: #fff0ff;
+  border-radius: 30px;
+  padding: 20px;
+  width: 500px;
+  min-height: 200px;
+  margin: 70px auto; /* This centers the card horizontally */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+  text-align: center; /* Center text content within cards by default */
+}
+
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Styles for forms within cards */
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+  max-width: 400px; /* Limit form width for better readability */
+  margin: 20px auto 0 auto; /* Center the form within the card */
+  text-align: left; /* Align labels/inputs to the left within the form */
+}
+
+.card form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block; /* Ensures label takes its own line */
+  color: #333;
+}
+
+.card form input[type="text"],
+.card form input[type="email"],
+.card form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fcfcfc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card form input[type="text"]:focus,
+.card form input[type="email"]:focus,
+.card form textarea:focus {
+  border-color: #e38fff;
+  box-shadow: 0 0 0 3px rgba(227, 143, 255, 0.3);
+  outline: none;
+}
+
+.card form button[type="submit"] {
+  background-color: #e38fff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.card form button[type="submit"]:hover {
+  background-color: #c500ff; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+
+/* Footer */
+footer {
+  padding: 10px 0;
+  text-align: center; /* Centered footer text */
+  color: #666; /* Softer color */
+  margin-top: 50px; /* Increased margin for better separation */
+  font-size: 0.85em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%; /* Ensure footer spans full width */
+}
+
+
+.profile-pic {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%; /* makes it a circle */
+  object-fit: cover; /* ensures the image fills the circle */
+  border: 3px solid #e38fff; /* glowing green border */
+  box-shadow: 0 0 20px rgba(255, 0, 102, 0.6); /* soft glow */
+  margin: 70px auto 70px 100px; /* Centered vertically within its space, pushed left */
+  display: block; /* Important for auto margins to work */
+}
+
+
+
+/* RESUME PAGE */
+
+
+.resume-page body {
+  background: linear-gradient(135deg, #fff, #e8faff); /* Adjusted body background for resume */
+  color: #222;
+  font-family: 'Inter', sans-serif;
+  padding: 20px; /* Added some general padding for the page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-page main.container {
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping when window is smaller */
+  flex-direction: row; /* horizontal layout */
+  justify-content: center; /* center all cards horizontally */
+  align-items: flex-start;
+  gap: 30px; /* space between cards */
+  margin-top: 5px;
+  width: 90%; /* Ensure container respects width */
+  max-width: 1200px; /* Max width for consistency */
+}
+
+
+.resume-page .card {
+  flex: 1 1 400px; /* allows flexible row sizing */
+  background-color: #fbedff;
+  border-radius: 25px;
+  padding: 25px 35px; /* Increased padding for resume cards */
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+  border: 1px solid rgba(255, 0, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: auto; /* Allow height to adjust to content */
+  margin: 0; /* Remove specific margin to let gap control spacing */
+  text-align: left; /* Resume content should be left-aligned */
+}
+/* Paragraphs and lists */
+.resume-page p,
+.resume-page li {
+  line-height: 1.6;
+  color: #333;
+}
+
+.resume-page ul {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.resume-page li::marker {
+  color: #c500ff;
+}
+
+.resume-page .card:hover { /* Changed from section:hover to .card:hover */
+  box-shadow: 0 0 25px rgba(197, 0, 255, 0.25);
+  transform: translateY(-5px); /* Added slight lift on hover */
+}
+
+/* Add this to your existing styles.css file */
+
+/* Specific styles for the Anime List page */
+.anime-list-card {
+  width: 600px; /* Make the card a bit wider for the list */
+  max-height: 700px; /* Limit height to make it scrollable */
+  margin: 40px auto; /* Center the card horizontally and give it some space */
+  text-align: center; /* Center the heading and intro text */
+  padding: 30px; /* More padding for a better look */
+}
+
+.anime-list-card .intro-text {
+  margin-bottom: 25px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.anime-scroll-container {
+  max-height: 500px; /* Height of the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 15px; /* Space for the scrollbar */
+  text-align: left; /* Align the list items to the left */
+  margin-top: 20px;
+}
+
+.anime-titles {
+  list-style: decimal; /* Numbered list */
+  padding-left: 25px; /* Indent for numbers */
+  line-height: 1.8; /* Space out the list items */
+  font-size: 1.05em;
+  color: #333;
+}
+
+.anime-titles li {
+  margin-bottom: 5px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08); /* Subtle separator */
+  padding-bottom: 5px;
+}
+
+.anime-titles li:last-child {
+  border-bottom: none; /* No separator for the last item */
+}
+
+/* Optional: Make the scrollbar look a bit nicer */
+.anime-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.anime-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.anime-scroll-container::-webkit-scrollbar-thumb {
+  background: #e38fff;
+  border-radius: 10px;
+}
+
+.anime-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #c500ff;
+}
