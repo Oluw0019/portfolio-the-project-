@@ -17,6 +17,40 @@ body {
   padding-top: 40px; /* creates space above header */
 }
 
+/* Typography: improve readability by increasing line-height and spacing */
+body {
+  line-height: 1.65; /* comfortable default for paragraphs */
+}
+
+/* General paragraph and list spacing so text doesn't feel cramped */
+p,
+li {
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+}
+
+/* Slightly tighter inside cards but still airy */
+.card p,
+.card li {
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+}
+
+/* Headings spacing and line-height to keep them distinct */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  margin-top: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Project-specific descriptions */
+.project-description {
+  line-height: 1.7;
+}
+
 /* Header stays on top but not too tall */
 header {
   background-color: #e38fff;
@@ -38,6 +72,15 @@ header {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Generic centered container used across pages */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+  box-sizing: border-box;
 }
 
 /* Horizontal nav */
@@ -63,25 +106,29 @@ nav a:hover {
 main.container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; /* allow content to wrap on smaller screens */
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
-  width: 90%;
+  gap: 28px;
+  width: 100%;
   max-width: 1300px;
-  margin: 40px auto;
+  margin: 24px auto;
+  padding: 8px 0;
 }
 
 /* Make sections look like horizontal cards */
 .card {
   background-color: #fff0ff;
-  border-radius: 30px;
+  border-radius: 24px;
   padding: 20px;
-  width: 500px;
-  min-height: 200px;
-  margin: 70px auto; /* This centers the card horizontally */
+  width: 100%;
+  max-width: 620px;
+  min-height: 120px;
+  margin: 16px;
+  flex: 1 1 420px; /* allow cards to sit side-by-side and shrink when needed */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
-  text-align: center; /* Center text content within cards by default */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  text-align: left; /* left-align content for readability */
 }
 
 
@@ -159,14 +206,41 @@ footer {
 
 
 .profile-pic {
-  width: 450px;
-  height: 450px;
-  border-radius: 50%; /* makes it a circle */
-  object-fit: cover; /* ensures the image fills the circle */
-  border: 3px solid #e38fff; /* glowing green border */
-  box-shadow: 0 0 20px rgba(255, 0, 102, 0.6); /* soft glow */
-  margin: 70px auto 70px 100px; /* Centered vertically within its space, pushed left */
-  display: block; /* Important for auto margins to work */
+  width: 320px;
+  max-width: 45%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e38fff;
+  box-shadow: 0 12px 30px rgba(197, 0, 255, 0.12);
+  margin: 20px auto;
+  display: block;
+}
+
+/* Larger screens: allow the profile image to sit to the left when space allows */
+@media (min-width: 1000px) {
+  .profile-pic {
+    max-width: 360px;
+    margin: 40px 0 40px 60px;
+  }
+}
+
+@media (max-width: 520px) {
+  .profile-pic {
+    width: 220px;
+    max-width: 60%;
+    margin: 18px auto;
+  }
+
+  main.container {
+    gap: 18px;
+  }
+
+  .card {
+    margin: 12px auto;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 
@@ -291,3 +365,118 @@ footer {
 .anime-scroll-container::-webkit-scrollbar-thumb:hover {
   background: #c500ff;
 }
+
+/* Projects Page styles (for projects.html) */
+.projects-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Projects page: use stacked cards and tighter vertical spacing for document-style content */
+.projects-page {
+  gap: 6px; /* reduce spacing around hero and content */
+}
+
+.projects-page .projects-hero {
+  margin-bottom: 12px;
+}
+
+.projects-page .card {
+  max-width: 100%;
+  flex: none; /* ensure cards stack vertically */
+  margin: 10px 0; /* small vertical spacing between cards */
+  padding: 18px; /* slightly tighter padding for dense content */
+}
+
+.projects-page .card h2 {
+  margin-bottom: 8px;
+}
+
+.projects-page .projects-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.projects-page .projects-hero h1 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.projects-page .projects-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background-color: #fff7ff;
+  border: 1px solid rgba(197, 0, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 28px rgba(197, 0, 255, 0.06);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(197, 0, 255, 0.14);
+}
+
+
+
+.project-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 140px;
+}
+
+.project-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  
+}
+
+.project-description {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.project-links a {
+  text-decoration: none;
+  background: #e38fff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.project-links a:hover {
+  background: #c500ff;
+  transform: translateY(-3px);
+}
+
+
+
