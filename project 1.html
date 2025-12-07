@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Daniel Oluwatuyi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div>
+        <h1 class="header-title">Daniel Oluwatuyi</h1>
+        <p>Web Developer • Algonquin College</p>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="myportfolio.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="about.html">Anime List</a></li>
+          <li><a href="contact.html">Contact</a></li>
+            <li><a href="project 1.html">Project 1</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container projects-page">
+    
+    <article style="margin-bottom: 50px;">
+      <h2 style="color: #7b008f; font-size: 1.8rem; margin-bottom: 20px;">Hospital Triage App — Project Summary</h2>
+
+      <section class="card">
+        <h3>Overview</h3>
+        <p>
+          The Hospital Triage App was developed for Assignment #3. It is a full-stack web application that helps emergency room
+          staff organize patients based on two key factors: severity of condition and time spent waiting. The system provides
+          administrators with complete queue visibility and management tools, while patients can log in using their name and
+          access code to view real-time wait time estimates.
+        </p>
+        <p style="margin-top: 10px;">
+          The application demonstrates practical understanding of client-server architecture, RESTful API design, priority queue
+          algorithms, and modern UI design patterns.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Technical Documentation</h3>
+        
+        <h4 style="margin-top: 15px; color: #7b008f; font-size: 1.1rem;">Backend (Node.js & Express)</h4>
+        <p>
+          The server was built using Express.js and provides RESTful API endpoints for managing patient data. All data is
+          exchanged in JSON format. The application follows an MVC-inspired structure to separate concerns between data models,
+          business logic, and views.
+        </p>
+        <p><strong>Key API Endpoints:</strong></p>
+        <ul style="margin-left: 20px;">
+          <li><code>GET /api/patients</code> — Retrieve all patients with calculated wait times</li>
+          <li><code>POST /api/patients</code> — Add new patient and generate access code</li>
+          <li><code>DELETE /api/patients/:id</code> — Remove patient from queue</li>
+          <li><code>POST /api/patient/lookup</code> — Patient authentication and status lookup</li>
+          <li><code>GET /api/patient/:id</code> — Get specific patient information</li>
+        </ul>
+
+        <h4 style="margin-top: 20px; color: #7b008f; font-size: 1.1rem;">Priority Queue Algorithm</h4>
+        <p>
+          Patients are sorted using a two-tier priority system: severity level first (Critical, Emergency, Urgent, Non-Urgent),
+          then arrival time. The algorithm dynamically recalculates queue order and wait times whenever patients are added or
+          treated. Wait times are estimated based on the number of patients ahead and their expected treatment durations.
+        </p>
+
+        <h4 style="margin-top: 20px; color: #7b008f; font-size: 1.1rem;">Frontend (HTML, CSS, JavaScript)</h4>
+        <p>
+          The client interface consists of three views: a landing page, admin dashboard, and patient portal. JavaScript handles
+          all dynamic updates through asynchronous fetch requests to the API. The design uses modern glassmorphism effects with
+          CSS backdrop filters, animations, and responsive layouts built with Flexbox and CSS Grid.
+        </p>
+        <p style="margin-top: 10px;">
+          <strong>Key Features:</strong> Real-time auto-refresh for both admin and patient views, form validation, error handling,
+          and mobile-responsive design.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Design System Integration</h3>
+        <p>
+          The portfolio's design system from Deliverable #2 was partially reused for structural elements like cards and navigation.
+          However, the Triage App introduced a new visual style with glassmorphism effects, gradient backgrounds, and animated
+          components that differ from the main portfolio aesthetic.
+        </p>
+        <p style="margin-top: 10px;">
+          <strong>New Design Elements Added:</strong>
+        </p>
+        <ul style="margin-left: 20px;">
+          <li>Purple-to-pink gradient backgrounds</li>
+          <li>Frosted glass card effects with backdrop blur</li>
+          <li>Severity-based color coding (red, orange, yellow, green)</li>
+          <li>Smooth hover animations and transitions</li>
+          <li>Custom form styling with focus effects</li>
+        </ul>
+        <p style="margin-top: 10px;">
+          These new components have been documented as an extension to the original design system.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Other Technologies & Concepts from the Course</h3>
+        <p>
+          While not every technology learned in CST 3106 was directly used in the Hospital Triage App, the course covered
+          additional concepts that expand my development skillset for future projects:
+        </p>
+
+        <h4 style="margin-top: 15px; color: #7b008f; font-size: 1.05rem;">Database Technologies</h4>
+        <ul style="margin-left: 20px;">
+          <li><strong>PostgreSQL & MySQL</strong> — Relational databases for structured data storage (future enhancement for the Triage App)</li>
+          <li><strong>MongoDB</strong> — NoSQL database for flexible, document-based data models</li>
+          <li><strong>DDL/DML</strong> — SQL statements for creating tables and manipulating data</li>
+          <li><strong>ORM (Sequelize)</strong> — Tools that simplify database operations through JavaScript objects</li>
+        </ul>
+
+        <h4 style="margin-top: 15px; color: #7b008f; font-size: 1.05rem;">Advanced Web Development</h4>
+        <ul style="margin-left: 20px;">
+          <li><strong>AJAX & Fetch API</strong> — Asynchronous requests for dynamic page updates</li>
+          <li><strong>ACID Properties</strong> — Database transaction principles for ensuring data integrity</li>
+          <li><strong>Authentication & JWT</strong> — Secure user login and session management techniques</li>
+          <li><strong>Postman</strong> — API testing and endpoint validation</li>
+        </ul>
+
+        <h4 style="margin-top: 15px; color: #7b008f; font-size: 1.05rem;">Best Practices & Standards</h4>
+        <ul style="margin-left: 20px;">
+          <li><strong>WCAG Accessibility Guidelines</strong> — Semantic HTML and ARIA attributes for inclusive design</li>
+          <li><strong>Responsive Design</strong> — Media queries and mobile-first development approach</li>
+          <li><strong>Git Version Control</strong> — Branching, commits, and collaborative workflows</li>
+          <li><strong>Code Documentation</strong> — Writing clear README files and inline comments</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Highlights & Challenges</h3>
+        
+        <h4 style="color: #7b008f; margin-top: 10px;">Key Highlights</h4>
+        <ul style="margin-left: 20px;">
+          <li>Successfully implemented a two-tier priority queue sorting algorithm</li>
+          <li>Built a complete RESTful API with proper endpoint structure</li>
+          <li>Created a modern, visually appealing UI with glassmorphism effects</li>
+          <li>Implemented real-time auto-refresh for dynamic queue updates</li>
+          <li>Designed separate, role-appropriate interfaces for admins and patients</li>
+        </ul>
+
+        <h4 style="color: #7b008f; margin-top: 20px;">Technical Challenges</h4>
+        <ul style="margin-left: 20px;">
+          <li>Managing asynchronous API calls with async/await to prevent race conditions</li>
+          <li>Calculating accurate wait times that update dynamically as the queue changes</li>
+          <li>Ensuring cross-browser compatibility for CSS backdrop filters</li>
+          <li>Handling data persistence limitations with in-memory storage</li>
+          <li>Maintaining clean separation between frontend and backend logic</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Reflection</h3>
+        <p>
+          Building the Hospital Triage App solidified my understanding of full-stack development, REST API design, and
+          asynchronous JavaScript programming. It brought together concepts learned throughout the course—from Node.js and
+          Express on the backend to modern CSS techniques and DOM manipulation on the frontend.
+        </p>
+        <p style="margin-top: 10px;">
+          This project challenged me to think through real-world application requirements like priority sorting, user
+          authentication, and real-time data updates. The experience of building a functional healthcare management system
+          demonstrated how client-side and server-side technologies work together to create practical, user-friendly solutions.
+        </p>
+      </section>
+    </article>
+
+    <hr style="border: none; border-top: 2px solid rgba(227, 143, 255, 0.2); margin: 50px 0;">
+
+    <!-- =======================
+         PROJECT 2 — YATZY GAME
+         ======================= -->
+    <article>
+      <h2 style="color: #7b008f; font-size: 1.8rem; margin-bottom: 20px;">Yatzy Game — Project Summary</h2>
+
+      <section class="card">
+        <h3>Overview</h3>
+        <p>
+          The Yatzy Game was developed across Assignment #1 and Assignment #2. Assignment #1 focused on creating a complete
+          single-player dice game using HTML, CSS, and JavaScript. Assignment #2 expanded the project by integrating a
+          server-based dice generation system, replacing the client-side random dice logic with API calls to a backend service.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Technical Documentation</h3>
+        
+        <h4 style="margin-top: 15px; color: #7b008f; font-size: 1.1rem;">Front-End (HTML/CSS/JavaScript)</h4>
+        <p>
+          The game interface uses Flexbox layouts and reusable button components from my portfolio design system. JavaScript
+          handles all game logic including rolling dice, selecting which dice to hold, tracking turn limits, calculating scores
+          for different Yatzy categories, and updating the DOM in real-time based on player actions.
+        </p>
+
+        <h4 style="margin-top: 20px; color: #7b008f; font-size: 1.1rem;">Client–Server Integration (Assignment #2)</h4>
+        <p>
+          In Assignment #2, the dice rolling module was replaced with asynchronous fetch calls to a server endpoint. The server
+          generated random dice values and returned them in JSON format. The client received the data and updated the UI
+          accordingly, demonstrating practical understanding of API communication and asynchronous JavaScript.
+        </p>
+
+        <h4 style="margin-top: 20px; color: #7b008f; font-size: 1.1rem;">Server Implementation</h4>
+        <p>
+          The backend was built using Node.js and Express, following RESTful API principles. The server handled dice generation
+          requests and maintained consistent response formats for seamless client integration.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Design System Integration</h3>
+        <p>
+          Typography, color palette, and card components from my portfolio's design system were reused in the Yatzy interface
+          to maintain visual consistency across projects. The button styles and spacing rules were applied directly from the
+          established design system.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Technologies & Concepts Applied</h3>
+        <ul style="margin-left: 20px;">
+          <li>JavaScript ES6 features (arrow functions, template literals, async/await)</li>
+          <li>DOM manipulation and event handling</li>
+          <li>RESTful API design and implementation</li>
+          <li>Asynchronous programming with Fetch API</li>
+          <li>Responsive design for mobile and tablet layouts</li>
+          <li>Git version control workflow</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Highlights & Challenges</h3>
+        
+        <h4 style="color: #7b008f; margin-top: 10px;">Key Achievements</h4>
+        <ul style="margin-left: 20px;">
+          <li>Implemented complete Yatzy scoring logic with all categories</li>
+          <li>Successfully integrated client-side game with server-generated dice</li>
+          <li>Created smooth transitions between game states</li>
+          <li>Built a clean, intuitive user interface using design system components</li>
+        </ul>
+
+        <h4 style="color: #7b008f; margin-top: 20px;">Challenges Overcome</h4>
+        <ul style="margin-left: 20px;">
+          <li>Managing asynchronous dice rolls without disrupting game flow</li>
+          <li>Ensuring proper turn tracking and roll limit enforcement</li>
+          <li>Coordinating frontend and backend components effectively</li>
+          <li>Testing and debugging API communication</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Reflection</h3>
+        <p>
+          The Yatzy Game project introduced fundamental JavaScript development concepts including DOM manipulation, event
+          handling, and game logic implementation. Assignment #2 deepened my understanding of client-server architecture and
+          asynchronous programming, providing essential skills that directly supported the more complex Hospital Triage App.
+        </p>
+        <p style="margin-top: 10px;">
+          This project established a strong foundation in full-stack development patterns and demonstrated how frontend
+          interfaces communicate with backend services through well-designed APIs.
+        </p>
+      </section>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Daniel Ayomide Oluwatuyi</p>
+    </div>
+  </footer>
+</body>
+</html>
